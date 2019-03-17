@@ -1,0 +1,21 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/prop-types": 2,
+    "no-unused-vars": 1,
+    "react/jsx-uses-vars": 2,
+    "semi": [2, "always"]
+  },
+  "extends": "plugin:react/recommended"
+}
