@@ -1,0 +1,11 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "Proyecta",
+      "description": "WordPress site featuring a custom theme, built with PHP & JS.",
+      "thumbnail": "../../../static/img/projects/proyecta.jpg",
+      "url": "http://proyecta-scap.com"
+    }
+  ]
+}

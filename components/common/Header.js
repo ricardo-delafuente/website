@@ -4,7 +4,7 @@ import Link from 'next/link';
 class Header extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = { isOpen: false };
     this.handleToggle = this.handleToggle.bind(this);
     this.close = this.close.bind(this);
@@ -38,17 +38,25 @@ class Header extends Component {
 
         {/*  Mobile Nav */}
         <div className={`mobile-nav ${statusClass}`}>
-          <Link href="/">
+          <Link href="#about">
             <a className="nav-link" onClick={this.close}>
-              Home
+              About
+            </a>
+          </Link>
+          <Link href="#work">
+            <a className="nav-link" onClick={this.close}>
+              Work
             </a>
           </Link>
         </div>
 
         {/* Desktop Nav */}
         <nav className="nav">
-          <Link href="/">
-            <a className="nav-link">Home</a>
+          <Link href="#about">
+            <a className="nav-link">About</a>
+          </Link>
+          <Link href="#work">
+            <a className="nav-link">Work</a>
           </Link>
         </nav>
 

@@ -103,6 +103,10 @@ const Meta = () => (
         left: 100%;
         margin-left: 1rem;
       }
+      .sub-heading {
+        font-size: 1.2rem;
+        margin: 4.5rem 0 3rem;
+      }
       .divider {
         border-left: 1px dashed #667788;
         margin: 0.5rem 0.75rem !important;
