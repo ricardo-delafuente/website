@@ -71,6 +71,27 @@ const Meta = () => (
         flex-basis: 100%;
         padding: 1.5rem;
       }
+      /* Form Elements */
+      .form-group {
+        /* Override .col margin */
+        margin-bottom: 0 !important;
+      }
+      .form-label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+      .form-field {
+        border: 1px solid #eee;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        outline: none;
+        padding: 0.75rem 1rem;
+        transition: 1s all;
+        width: 100%;
+      }
+      .form-error {
+        color: #ff6b81;
+      }
       /* Utility Classes */
       .heading {
         color: #4d5966;

@@ -3,3 +3,6 @@ node_modules
 
 # Build Files
 .next
+
+# Config Files
+server/config/dev.js

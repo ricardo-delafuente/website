@@ -48,6 +48,11 @@ class Header extends Component {
               Work
             </a>
           </Link>
+          <Link href="#contact">
+            <a className="nav-link" onClick={this.close}>
+              Contact
+            </a>
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -57,6 +62,9 @@ class Header extends Component {
           </Link>
           <Link href="#work">
             <a className="nav-link">Work</a>
+          </Link>
+          <Link href="#contact">
+            <a className="nav-link">Contact</a>
           </Link>
         </nav>
 

@@ -4,6 +4,7 @@ import Typed from 'react-typed';
 
 import Progress from '../components/common/Progress';
 import Portfolio from '../components/portfolio/Portfolio';
+import Contact from '../components/forms/Contact';
 
 class Index extends Component {
   constructor(props) {
@@ -114,6 +115,13 @@ class Index extends Component {
             <span>My Work</span>
           </h2>
           <Portfolio />
+        </section>
+
+        <section id="contact" className="container">
+          <h2 className="heading uppercase">
+            <span>Contact</span>
+          </h2>
+          <Contact />
         </section>
 
         <style jsx>{`
