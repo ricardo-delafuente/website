@@ -5,14 +5,14 @@ import Meta from '../common/Meta';
 import Footer from '../common/Footer';
 
 const Layout = props => {
-  const { children } = props;
+  const { children, isAuthenticated } = props;
 
   return (
     <div className={'wrapper'}>
       {/* Global styles */}
       <Meta />
 
-      <Header />
+      <Header isAuthenticated={isAuthenticated} />
       <div className="content">{children}</div>
       <Footer />
 
@@ -32,7 +32,8 @@ const Layout = props => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  isAuthenticated: PropTypes.bool.isRequired
 };
 
 export default Layout;

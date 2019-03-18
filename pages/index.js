@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout/Layout';
 import Typed from 'react-typed';
 
@@ -20,7 +21,7 @@ class Index extends Component {
   }
   render() {
     return (
-      <Layout>
+      <Layout {...this.props.auth}>
         <section className="hero container">
           <h1 className="typed uppercase">
             <Typed
@@ -165,5 +166,9 @@ class Index extends Component {
     );
   }
 }
+
+Index.propTypes = {
+  auth: PropTypes.object.isRequired
+};
 
 export default Index;

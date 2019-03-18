@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import auth0Client from '../../services/auth';
 import Link from 'next/link';
 
 class Header extends Component {
@@ -22,6 +24,7 @@ class Header extends Component {
   render() {
     const { isOpen } = this.state;
     const statusClass = isOpen ? 'nav-open' : 'nav-close';
+    const { isAuthenticated } = this.props;
 
     return (
       <header className="container">
@@ -53,6 +56,16 @@ class Header extends Component {
               Contact
             </a>
           </Link>
+          {!isAuthenticated && (
+            <span onClick={auth0Client.login} className="nav-link">
+              Log in
+            </span>
+          )}
+          {isAuthenticated && (
+            <span onClick={auth0Client.logout} className="nav-link">
+              Log out
+            </span>
+          )}
         </div>
 
         {/* Desktop Nav */}
@@ -66,6 +79,17 @@ class Header extends Component {
           <Link href="#contact">
             <a className="nav-link">Contact</a>
           </Link>
+          <span className="divider" />
+          {!isAuthenticated && (
+            <span onClick={auth0Client.login} className="nav-link">
+              Log in <i className="fas fa-sign-in-alt" />
+            </span>
+          )}
+          {isAuthenticated && (
+            <span onClick={auth0Client.logout} className="nav-link">
+              Log out <i className="fas fa-sign-out-alt" />
+            </span>
+          )}
         </nav>
 
         <style jsx>{`
@@ -148,5 +172,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired
+};
 
 export default Header;

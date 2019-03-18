@@ -5,6 +5,7 @@ const compression = require('compression');
 // Services & Middleware
 const bodyParser = require('body-parser');
 const transporter = require('./services/transporter');
+const authService = require('./services/auth');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -32,6 +33,16 @@ app
     server.get('*', (req, res) => {
       return handle(req, res);
     });
+
+        // Role authentication example
+        server.get(
+          '/admin',
+          authService.checkJWT,
+          authService.checkRole('admin'),
+          (req, res) => {
+            return res.send('Using auth');
+          }
+        );
 
     server.post('/contact/send', (req, res) => {
       const { name, email, message } = req.body;
